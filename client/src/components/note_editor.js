@@ -7,6 +7,7 @@ import NoteEditorTitleField from './note_editor_title_field';
 import NoteEditorDescriptionField from './note_editor_description_field';
 import NoteEditorSharing from './note_editor_sharing_editor';
 import ErrorDisplay from './error_display';
+import note_editor_sharing_editor from './note_editor_sharing_editor';
 
 export default class NoteEditor extends Component {
   constructor() {
@@ -118,6 +119,7 @@ export default class NoteEditor extends Component {
       .then(response => {
         this.setLoading(false);
         this.setNote(response.data);
+        this.props.updateNotes(response.data);
       })
       .catch(error => {
         this.handleErrorResponse(error);

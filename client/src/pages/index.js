@@ -49,6 +49,11 @@ export default class Index extends Component {
     });
   }
 
+  updateNotes(note) {
+    const notesWithoutUpdatedNote = this.state.notes.filter(arrayNote => arrayNote._id !== note._id);
+    this.setNotes([note, ...notesWithoutUpdatedNote]);
+  }
+
   fetchAllNotes(shouldShowLoadingIndicator = true) {
     this.setLoading(shouldShowLoadingIndicator);
     const { notesType } = this.props;
@@ -150,6 +155,7 @@ export default class Index extends Component {
                   component={props => (
                     <NoteEditor
                       {...props}
+                      updateNotes={(note) => this.updateNotes(note)}
                       noteUpdated={() => this.fetchAllNotes(false)}
                     />
                   )}
