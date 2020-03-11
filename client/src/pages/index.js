@@ -122,15 +122,17 @@ export default class Index extends Component {
                     All Notes
                   </h2>
                 </Link>
-                <h2
-                  style={{
-                    float: 'left',
-                    marginLeft: '1em',
-                    color: this.isNotesTypeAll() ? '#aaa' : '#333',
-                  }}
-                >
-                  Recycle Bin
+                <Link to="/notes/recyclebin">
+                  <h2
+                    style={{
+                      float: 'left',
+                      marginLeft: '1em',
+                      color: this.isNotesTypeAll() ? '#aaa' : '#333',
+                    }}
+                  >
+                    Recycle Bin
                 </h2>
+                </Link>
                 <AddNoteButton onClick={() => this.createNewNote()} />
                 <div style={{ clear: 'both' }} />
                 <ScrollArea
