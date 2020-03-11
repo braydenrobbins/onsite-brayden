@@ -9,7 +9,7 @@ import notesRouter from './routes/notes.routes';
 import usersRouter from './routes/users.routes';
 
 // Setup Mongoose Connection
-const dbUrl = 'mongodb://localhost:27017/noter';
+const dbUrl = 'mongodb://localhost:27016/noter';
 const mongoDB = process.env.MONGODB_URI || dbUrl;
 const db = mongoose.connection;
 // tslint:disable-next-line:no-console
